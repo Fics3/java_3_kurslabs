@@ -117,7 +117,7 @@ public class Server {
                     try {
                         if (a[1].equals("@mda")) {
                             mda = true;
-                            sentence = "GAME START\nWrite > if your number bigger or < lower";
+                            sentence = "GAME START\nWrite '>' if your number bigger or '<' if lower";
                             min = 0;
                             max = 100;
                             current = (min + max) / 2;
