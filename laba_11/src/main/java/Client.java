@@ -22,13 +22,9 @@ public class Client {
         BufferedReader inFromUser = new BufferedReader(new InputStreamReader(System.in));
         while (true) {
             String message = inFromUser.readLine();
-
             if (message.startsWith("@name")){
-                changeUsername(message);
-                String[] tmp = message.split(" ");
-                message = username+" change nickname to: ";
                 try{
-                    changeUsername(tmp[1]);
+                    changeUsername(message);
                 }
                 catch (ArrayIndexOutOfBoundsException e){
                     System.out.println("ERROR: @name -name-");
@@ -61,8 +57,10 @@ public class Client {
         }
     }
     public void changeUsername(String message) throws IOException {
-        username = message;
-        message = message + username;
+        String[] tmp = message.split(" ");
+        message = username;
+        username = tmp[1];
+        message = message+ " change nickname to: "+ username;
         byte[] sendData = new byte[1024];
         sendData = message.getBytes();
 

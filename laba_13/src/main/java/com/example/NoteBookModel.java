@@ -1,7 +1,7 @@
+package com.example;
+
 import java.io.*;
 import java.nio.file.FileSystems;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -11,7 +11,7 @@ public class NoteBookModel {
 
     private Map<String, ArrayList<String>> notes = new HashMap<>();
 
-    NoteBookModel() {
+    public NoteBookModel() {
     }
 
     public static void main(String[] args){

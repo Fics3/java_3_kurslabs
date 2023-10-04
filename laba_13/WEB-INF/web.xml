@@ -11,7 +11,7 @@
 
     <servlet-mapping>
         <servlet-name>NoteBook</servlet-name>
-        <url-pattern>/sex/*</url-pattern>
+        <url-pattern>/NoteBook/*</url-pattern>
     </servlet-mapping>
 
 </web-app>

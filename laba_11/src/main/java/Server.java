@@ -106,6 +106,7 @@ public class Server {
     public void receiveMessage() throws IOException {   //da da slushauy
 
             while (true) {
+                try {
                     byte[] receiveData = new byte[1024];
                     DatagramPacket receivePacket = new DatagramPacket(receiveData, receiveData.length);
                     serverSocket.receive(receivePacket);
@@ -114,10 +115,9 @@ public class Server {
 
                     String sentence = new String(receivePacket.getData(),0,receivePacket.getLength());
                     String[] a = sentence.split(" ");
-                    try {
                         if (a[1].equals("@mda")) {
                             mda = true;
-                            sentence = "GAME START\nWrite '>' if your number bigger or '<' if lower";
+                            sentence = "GAME START\nThink of a number from 0 to 100\nWrite '>' if your number bigger or '<' if lower\nType yes if it is your number";
                             min = 0;
                             max = 100;
                             current = (min + max) / 2;
