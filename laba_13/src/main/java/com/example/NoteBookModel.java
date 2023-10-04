@@ -11,13 +11,6 @@ public class NoteBookModel {
 
     private Map<String, ArrayList<String>> notes = new HashMap<>();
 
-    public NoteBookModel() {
-    }
-
-    public static void main(String[] args){
-        NoteBookModel noteBookModel = new NoteBookModel();
-        noteBookModel.readFromFile();
-    }
 
     public synchronized void add(String name, String phone) {
         if(!name.isEmpty() && !phone.isEmpty()) {
@@ -40,13 +33,22 @@ public class NoteBookModel {
         notes.clear();
     }
 
+    public String search(String name){
+        for (var entry: notes.entrySet()){
+            if(entry.getKey().equals(name)){
+                return "name " + entry.getKey()+" phones "+entry.getValue();
+            }
+        }
+        return null;
+    }
+
     public synchronized void readFromFile() {
         try {
             String userDirectory = FileSystems.getDefault()
                     .getPath("")
                     .toAbsolutePath()
                     .getParent().toString();
-            BufferedReader bufferedReader = new BufferedReader(new FileReader(userDirectory+"/webapps/laba_13/src/main/resources/Notes"));
+            BufferedReader bufferedReader = new BufferedReader(new FileReader(userDirectory+"/laba_13/src/main/resources/Notes"));
             String name = bufferedReader.readLine();
             String phone = bufferedReader.readLine();
             while (name != null || phone!=null) {

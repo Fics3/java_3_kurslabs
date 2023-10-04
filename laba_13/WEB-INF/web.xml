@@ -8,10 +8,21 @@
         <servlet-name>NoteBook</servlet-name>
         <servlet-class>NoteBookServlet</servlet-class>
     </servlet>
+    <servlet>
+    <servlet-name>Search</servlet-name>
+    <servlet-class>SearchServlet</servlet-class>
+</servlet>
 
     <servlet-mapping>
         <servlet-name>NoteBook</servlet-name>
         <url-pattern>/NoteBook/*</url-pattern>
     </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>Search</servlet-name>
+        <url-pattern>/NoteBook/Search</url-pattern>
+    </servlet-mapping>
+
+
 
 </web-app>
