@@ -29,7 +29,7 @@ public class NoteBookServlet extends HttpServlet {
             noteBookModel.reset();
             noteBookModel.saveFile();
         }
-        req.setAttribute("notes",noteBookModel.getNotes());
+        req.setAttribute("notes", noteBookModel.getNotes());
 
         req.getRequestDispatcher("/Main.jsp").forward(req, resp);
     }
