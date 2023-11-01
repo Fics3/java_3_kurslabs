@@ -20,14 +20,13 @@
 </ul>
 <h2>Search Results:</h2>
 <ul>
-    <% for (Map.Entry<String, ArrayList<String>> entry : notes.entrySet()) {
-        if (Objects.equals(entry.getKey(), request.getParameter("searchResult"))) {%>
-    <p>Name: <%= entry.getKey() %>
+    <%String searchResult = request.getParameter("searchResult");%>
+    <% if (notes.containsKey(searchResult)) {%>
+    <p>Name: <%= searchResult %>
     </p>
-    <p>Phones: <%= entry.getValue() %>
+    <p>Phones: <%= notes.get(searchResult) %>
     </p>
-    <% }
-    }%>
+    <% }%>
 </ul>
 <form method="GET" action="${pageContext.request.contextPath}/NoteBook/add">
     Name: <input type="text" name="name">

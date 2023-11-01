@@ -1,0 +1,40 @@
+body {
+    background-color: #f0f0f0;
+    color: #000;
+}
+
+h1, h2 {
+    color: #332;
+}
+
+.button {
+    background-color: #007BFF;
+    color: #fff;
+}
+
+.ad-title {
+    font-weight: bolder;
+}
+
+.ad-text {
+    color: #555;
+    font-size: larger;
+}
+
+.ad-username {
+    color: #4b3d3d;
+    font-size: small;
+}
+
+.ad-timestamp {
+    color: #4b3d3d;
+    font-size: small;
+}
+
+a {
+    color: #ff9100;
+}
+
+a:active {
+    color: #8f6429;
+}

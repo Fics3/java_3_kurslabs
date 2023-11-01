@@ -5,7 +5,6 @@ import java.nio.file.FileSystems;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Objects;
 
 public class NoteBookModel {
 
@@ -17,12 +16,7 @@ public class NoteBookModel {
     public synchronized void add(String name, String phone) {
         if (!name.isEmpty() && !phone.isEmpty()) {
             if (notes.containsKey(name)) {
-                for (Map.Entry<String, ArrayList<String>> entry : notes.entrySet()) {
-                    if (Objects.equals(entry.getKey(), name)) {
-                        entry.getValue().add(phone);
-                        return;
-                    }
-                }
+                notes.get(name).add(phone);
             } else {
                 ArrayList<String> arrayList = new ArrayList<>();
                 arrayList.add(phone);

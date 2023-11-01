@@ -1,0 +1,1 @@
+javac -cp ../../lib/servlet-api.jar:src/ src/main/java/NoteBookServlet.java src/main/java/SearchServlet.java src/main/java/com/example/NoteBookModel.java -d WEB-INF/classes
