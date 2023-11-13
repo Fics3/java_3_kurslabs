@@ -4,40 +4,29 @@
 <html>
 <head>
     <title>Animal List</title>
-    <style>
-        .nested {
-            display: none;
-            margin-left: 15px;
-        }
-
-        .open::before {
-            content: "-";
-            margin-right: 5px;
-        }
-
-        .closed::before {
-            content: "+";
-            margin-right: 5px;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-
+<h1>Check my animal list!</h1>
 <ol id="list">
-    <%-- Достаем данные из атрибута запроса --%>
     <%
         Map<String, List<String>> animals = (Map<String, List<String>>) request.getAttribute("animals");
         for (Map.Entry<String, List<String>> entry : animals.entrySet()) {
     %>
     <li class="top-level closed" onclick="toggleList(this)">
         <%= entry.getKey() %>
+        <span class="delete-btn" onclick="deleteItem(this)">[X]</span>
         <ul class="nested">
             <% for (String animal : entry.getValue()) { %>
-            <li><%= animal %></li>
+            <li>
+                <%= animal %>
+                <span class="delete-btn-nested" onclick="deleteItem(this)">[X]</span>
+            </li>
             <% } %>
         </ul>
     </li>
     <% } %>
+
 </ol>
 
 <script>
@@ -52,6 +41,16 @@
             item.classList.add("closed");
             nestedList.style.display = "none";
         }
+
+    }
+
+    function deleteItem(btn) {
+        const listItem = btn.parentElement;
+        const listContainer = listItem.parentElement;
+
+        listItem.parentNode.removeChild(listItem);
+
+        event.stopPropagation();
     }
 </script>
 

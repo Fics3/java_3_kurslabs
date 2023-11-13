@@ -1,0 +1,44 @@
+body {
+    font-family: 'Comic sans', "Courier 10 Pitch";
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+#list {
+    list-style: none;
+    padding: 0;
+}
+h1 {
+    font-size: xxx-large;
+}
+
+.top-level {
+    background-color: #d3eeff;
+    color: #4b3d3d;
+    padding: 10px;
+    margin: 5px 0;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: x-large;
+}
+
+.nested {
+    display: none;
+    margin-left: 15px;
+}
+
+.open::before {
+    content: "-";
+    margin-right: 5px;
+}
+
+.closed::before {
+    content: "+";
+    margin-right: 5px;
+}
+
+.nested li {
+    margin: 5px 0;
+    font-size: medium;
+}

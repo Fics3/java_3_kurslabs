@@ -23,7 +23,7 @@ public class AnimalList {
                 .toAbsolutePath()
                 .getParent()
                 .toString();
-        File file = new File(userDir + "/webapps/laba_16/src/main/resources/animals.txt");
+        File file = new File(userDir+"/webapps/laba_16/src/main/resources/animals.txt");
         try (BufferedReader bufferedReader = new BufferedReader(new FileReader(file))) {
             String line;
             while ((line = bufferedReader.readLine()) != null) {

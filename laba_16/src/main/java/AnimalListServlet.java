@@ -20,7 +20,6 @@ public class AnimalListServlet extends HttpServlet {
     }
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.setContentType("text/plain;charset=UTF-8");
 
         request.setAttribute("animals", animalList.getAnimals());
 
